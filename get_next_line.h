@@ -6,7 +6,7 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:52:34 by juykang           #+#    #+#             */
-/*   Updated: 2022/07/28 16:28:34 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/07/30 21:16:23 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <fcntl.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 5
@@ -26,10 +25,14 @@ typedef struct s_gnl
 	int				fd;
 	struct s_gnl	*next;
 	char			buff[BUFFER_SIZE];
-	ssize_t			start_idx;
+	char			*new;
+	ssize_t			offset;
 	ssize_t			rbytes;
+	ssize_t			buff_idx;
 }	t_gnl;
 
 char	*get_next_line(int fd);
-char	*before_reading_buffer(**head, *cur, *res);
+char	*before_reading_buffer(t_gnl **head, t_gnl *cur, char *res);
+char	*gnl_join(char *res, char *cur);
+char	*gnl_cpy(char *res, t_gnl *cur);
 #endif

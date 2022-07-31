@@ -6,11 +6,12 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:51:10 by juykang           #+#    #+#             */
-/*   Updated: 2022/07/28 16:41:09 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/07/30 21:32:51 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <fcntl.h>
 
 t_gnl	*new_lst(int fd)
 {
@@ -23,6 +24,7 @@ t_gnl	*new_lst(int fd)
 	newlst->next = NULL;
 	newlst->offset = BUFFER_SIZE;
 	newlst->rbytes = BUFFER_SIZE;
+	newlst->buff_idx = 0;
 	return (newlst);
 }
 
@@ -57,9 +59,9 @@ char	*before_reading_buffer(t_gnl **head, t_gnl *cur, char *res)
 	int	i;
 
 	i = 0;
-	if (cur->start_idx < BUFFER_SIZE)
+	if (cur->buff_idx < BUFFER_SIZE)
 	{
-		i = cur->start_idx;
+		i = cur->buff_idx;
 		while (i <= BUFFER_SIZE)
 		{
 			if (i == BUFFER_SIZE)
@@ -68,7 +70,7 @@ char	*before_reading_buffer(t_gnl **head, t_gnl *cur, char *res)
 			}
 			if (cur->buff[i] == '\n')
 			{
-				*res = gnl_cpy(cur, res, i);
+				*res = gnl_cpy(cur, res);
 			}
 			i++;
 		}
@@ -76,22 +78,21 @@ char	*before_reading_buffer(t_gnl **head, t_gnl *cur, char *res)
 	retun (res);
 }
 
-char	*read_buffer(t_gnl **head, t_gnl*cur, char *res, int fd)
+char	*read_buffer(t_gnl **head, t_gnl *cur, char *res, int fd)
 {
-	ssize_t	i;
-
-	i = 0;
-	i = cur->start_idx;
-	while (i < BUFFER_SIZE)
+	if (cur->offset <= cur->rbytes)
 	{
 		cur->rbytes = read(fd, cur->buff, BUFFER_SIZE);
-		if (i == BUFFER_SIZE)
-			*res = gnl_join(cur, res);
-		if (cur->buff[i] == '\n')
-			*res = gnl_cpy(cur, res, i);
-		if (cur->buff[i] == EOF)
-			*res = gnl_cpy(cur, res, i);
-		i++;
+		while (cur->buff_idx <= BUFFER_SIZE)
+		{
+			if (cur->rbytes == 0 || cur->rbytes < BUFFER_SIZE)
+			{
+			}
+			if (cur->buff[cur->buff_idx] == '\n')
+				*res = gnl_cpy(res, cur);
+			if (cur->buff_idx == BUFFER_SIZE - 1)
+				*res = gnl_join(res, cur);
+		}
 	}
 }
 
@@ -105,10 +106,10 @@ char	*get_next_line(int fd)
 		return ((void *)0);
 	*res = (void *)0;
 	cur = find_fd_node(&head, fd);
-	if (!cur)
-		return ((void *)0);
+	if (before_reading_buffer)
 	*res = before_reading_buffer(&head, cur, res);
 	if (!res)
 		return ((void *) 0);
-	*res = read_buffer(&head, cur, res);
+	*res = read_buffer(&head, cur, res, fd);
+	return (res);
 }
