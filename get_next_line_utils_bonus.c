@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_utils_line_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 02:38:04 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 20:40:30 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 20:25:45 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,6 @@ void	gnl_del(t_gnl **head, t_gnl *cur)
 	{
 		*head = cur->next;
 		free (cur);
-	}
-	while ((*head)->next)
-	{
-		if ((*head) == cur)
-		{
-			(*head)->next = cur->next;
-			free(cur);
-		}
-		(*head) = (*head)->next;
 	}
 	return ;
 }

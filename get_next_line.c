@@ -6,12 +6,11 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:51:10 by juykang           #+#    #+#             */
-/*   Updated: 2022/07/30 21:32:51 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 20:49:11 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <fcntl.h>
 
 t_gnl	*new_lst(int fd)
 {
@@ -24,7 +23,9 @@ t_gnl	*new_lst(int fd)
 	newlst->next = NULL;
 	newlst->offset = BUFFER_SIZE;
 	newlst->rbytes = BUFFER_SIZE;
-	newlst->buff_idx = 0;
+	newlst->res_len = 0;
+	newlst->len = 1;
+	newlst->flag = 1;
 	return (newlst);
 }
 
@@ -54,46 +55,47 @@ t_gnl	*find_fd_node(t_gnl **head, int fd)
 	return (cur);
 }
 
-char	*before_reading_buffer(t_gnl **head, t_gnl *cur, char *res)
+ssize_t	read_line(t_gnl **head, t_gnl *cur, int fd)
 {
-	int	i;
-
-	i = 0;
-	if (cur->buff_idx < BUFFER_SIZE)
+	cur->rbytes = read(fd, cur->buff, BUFFER_SIZE);
+	if (cur->rbytes < 0)
 	{
-		i = cur->buff_idx;
-		while (i <= BUFFER_SIZE)
-		{
-			if (i == BUFFER_SIZE)
-			{
-				*res = gnl_join(cur, res);
-			}
-			if (cur->buff[i] == '\n')
-			{
-				*res = gnl_cpy(cur, res);
-			}
-			i++;
-		}
+		gnl_del(head, cur);
+		return (0);
 	}
-	retun (res);
+	cur->offset = 0;
+	cur->len = 1;
+	return (1);
 }
 
-char	*read_buffer(t_gnl **head, t_gnl *cur, char *res, int fd)
+char	*get_make_line(t_gnl *head, t_gnl *cur, char **res)
 {
-	if (cur->offset <= cur->rbytes)
+	char	*new_line;
+
+	new_line = malloc(cur->res_len + cur->len + 1);
+	if (!new_line)
 	{
-		cur->rbytes = read(fd, cur->buff, BUFFER_SIZE);
-		while (cur->buff_idx <= BUFFER_SIZE)
-		{
-			if (cur->rbytes == 0 || cur->rbytes < BUFFER_SIZE)
-			{
-			}
-			if (cur->buff[cur->buff_idx] == '\n')
-				*res = gnl_cpy(res, cur);
-			if (cur->buff_idx == BUFFER_SIZE - 1)
-				*res = gnl_join(res, cur);
-		}
+		gnl_del(&head, cur);
+		return ((void *)0);
 	}
+	if (*res)
+	{
+		get_copy_line(new_line, *res, cur->res_len);
+		free (*res);
+	}
+	get_copy_line(&new_line[cur->res_len], &cur->buff[cur->offset - cur->len + 1],
+		cur->len);
+	new_line[cur->res_len + cur->len] = '\0';
+	if (cur->flag)
+	{
+		cur->res_len = 0;
+		cur->offset += 1;
+	}
+	else
+		cur->res_len += cur->len;
+	cur->len = 1;
+	*res = new_line;
+	return (new_line);
 }
 
 char	*get_next_line(int fd)
@@ -104,12 +106,27 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, NULL, 0) < 0)
 		return ((void *)0);
-	*res = (void *)0;
+	res = (void *)0;
 	cur = find_fd_node(&head, fd);
-	if (before_reading_buffer)
-	*res = before_reading_buffer(&head, cur, res);
-	if (!res)
-		return ((void *) 0);
-	*res = read_buffer(&head, cur, res, fd);
+	while (cur->offset <= BUFFER_SIZE)
+	{
+		if (cur->offset == BUFFER_SIZE)
+			read_line(&head, cur, fd);
+		if (cur->rbytes < BUFFER_SIZE && cur->offset == cur->rbytes)
+			return (res);
+		if (cur->buff[cur->offset] == '\n')
+		{
+			cur->flag = 1;
+			return (get_make_line(head, cur, &res));
+		}
+		if (cur->offset == cur->rbytes - 1)
+		{
+			cur->flag = 0;
+			if (!get_make_line(head, cur, &res))
+				return ((void *) 0);
+		}
+		cur->offset++;
+		cur->len++;
+	}
 	return (res);
 }
