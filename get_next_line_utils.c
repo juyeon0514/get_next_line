@@ -6,7 +6,7 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/28 02:38:04 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 20:40:30 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 22:13:39 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,24 @@ char	*get_copy_line(char *dst, char *src, ssize_t len)
 
 void	gnl_del(t_gnl **head, t_gnl *cur)
 {
+	t_gnl	*temp;
+
 	if (*head == cur)
 	{
 		*head = cur->next;
 		free (cur);
+		return ;
 	}
-	while ((*head)->next)
+	temp = *head;
+	while (temp->next)
 	{
-		if ((*head) == cur)
+		if (temp == cur)
 		{
-			(*head)->next = cur->next;
+			temp->next = cur->next;
 			free(cur);
+			return ;
 		}
-		(*head) = (*head)->next;
+		temp = temp->next;
 	}
 	return ;
 }

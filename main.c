@@ -6,11 +6,11 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 20:32:18 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 20:35:10 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 21:47:57 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -42,5 +42,6 @@ int	main(void)
 	}
 	close(fd);
 	close(fd2);
+	//system("leaks a.out");
 	return (0);
 }

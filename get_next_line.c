@@ -6,7 +6,7 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:51:10 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 20:49:11 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 22:19:23 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ ssize_t	read_line(t_gnl **head, t_gnl *cur, int fd)
 	if (cur->rbytes < 0)
 	{
 		gnl_del(head, cur);
+		free (cur);
 		return (0);
 	}
 	cur->offset = 0;
@@ -68,7 +69,7 @@ ssize_t	read_line(t_gnl **head, t_gnl *cur, int fd)
 	return (1);
 }
 
-char	*get_make_line(t_gnl *head, t_gnl *cur, char **res)
+char	*get_make_line(t_gnl *head, t_gnl *cur, char **res, int flag)
 {
 	char	*new_line;
 
@@ -76,6 +77,7 @@ char	*get_make_line(t_gnl *head, t_gnl *cur, char **res)
 	if (!new_line)
 	{
 		gnl_del(&head, cur);
+		free (cur);
 		return ((void *)0);
 	}
 	if (*res)
@@ -83,16 +85,15 @@ char	*get_make_line(t_gnl *head, t_gnl *cur, char **res)
 		get_copy_line(new_line, *res, cur->res_len);
 		free (*res);
 	}
-	get_copy_line(&new_line[cur->res_len], &cur->buff[cur->offset - cur->len + 1],
-		cur->len);
+	get_copy_line(&new_line[cur->res_len],
+		&cur->buff[cur->offset - cur->len + 1], cur->len);
 	new_line[cur->res_len + cur->len] = '\0';
-	if (cur->flag)
+	cur->res_len += cur->len;
+	if (flag)
 	{
 		cur->res_len = 0;
 		cur->offset += 1;
 	}
-	else
-		cur->res_len += cur->len;
 	cur->len = 1;
 	*res = new_line;
 	return (new_line);
@@ -113,18 +114,15 @@ char	*get_next_line(int fd)
 		if (cur->offset == BUFFER_SIZE)
 			read_line(&head, cur, fd);
 		if (cur->rbytes < BUFFER_SIZE && cur->offset == cur->rbytes)
+		{
+			gnl_del(&head, cur);
 			return (res);
+		}
 		if (cur->buff[cur->offset] == '\n')
-		{
-			cur->flag = 1;
-			return (get_make_line(head, cur, &res));
-		}
+			return (get_make_line(head, cur, &res, 1));
 		if (cur->offset == cur->rbytes - 1)
-		{
-			cur->flag = 0;
-			if (!get_make_line(head, cur, &res))
+			if (!get_make_line(head, cur, &res, 0))
 				return ((void *) 0);
-		}
 		cur->offset++;
 		cur->len++;
 	}

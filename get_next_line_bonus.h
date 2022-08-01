@@ -6,12 +6,12 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:52:34 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 20:25:45 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/01 22:59:49 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -29,14 +29,13 @@ typedef struct s_gnl
 	ssize_t			rbytes;
 	ssize_t			len;
 	ssize_t			res_len;
-	int				flag;
 }	t_gnl;
 
 t_gnl	*new_lst(int fd);
-t_gnl	*find_fd_node(t_gnl **head, int fd);
-ssize_t	read_line(t_gnl **head, t_gnl *cur, int fd);
+t_gnl	*find_fd_node(t_gnl **head, t_gnl **cur, int fd);
+ssize_t	read_line(t_gnl **head, char *res, t_gnl *cur, int fd);
 char	*get_next_line(int fd);
-char	*get_make_line(t_gnl *head, t_gnl *cur, char **res, int flag);
+char	*get_make_line(t_gnl *cur, char **res, int flag);
 char	*get_copy_line(char *res, char *cur, ssize_t len);
 void	gnl_del(t_gnl **head, t_gnl *cur);
 #endif

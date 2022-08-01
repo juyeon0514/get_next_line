@@ -1,0 +1,305 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║         get_next_line        ║
+                        ╚══════════════════════════════╝
+⠋ Preparing framework⠙ Preparing framework⠹ Preparing framework⠸ Preparing framework✔ Preparing framework
+⠋ Executing: norminette⠙ Executing: norminette⠹ Executing: norminette⠸ Executing: norminette✖ Executing: norminette
+get_next_line.c: Error!
+Error: TOO_MANY_LINES       (line: 100, col:   1):	Function has more than 25 lines
+Error: TOO_MANY_LINES       (line: 130, col:   1):	Function has more than 25 lines
+get_next_line.h: OK!
+get_next_line_bonus.c: OK!
+get_next_line_bonus.h: OK!
+get_next_line_utils.c: OK!
+get_next_line_utils_bonus.c: OK!
+main.c: Error!
+Error: TOO_MANY_VARS_FUNC   (line:  24, col:   1):	Too many variables declarations in a function
+Error: WRONG_SCOPE_COMMENT  (line:  45, col:   5):	Comment is invalid in this scope
+Error: TOO_MANY_LINES       (line:  47, col:   1):	Function has more than 25 lines
+
+ℹ Running tests: gnlTester (https://github.com/Tripouille/gnlTester)
+[34m[Mandatory]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[33m[Static = 1]
+[35m[Bonus]
+[37m[BUFFER_SIZE = 1]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 42]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mInvalid fd: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/empty: [32m1.OK [32m2.OK [0m
+[37mfiles/nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/41_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/42_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/42_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/43_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/43_with_nl: [32m1.OK [32m2.OK [32m3.OK [0m
+[37mfiles/multiple_nlx5: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/multiple_line_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [0m
+[37mfiles/alternate_line_nl_no_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/alternate_line_nl_with_nl: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+[37mfiles/big_line_no_nl: [32m1.OK [32m2.OK [0m
+[37mfiles/big_line_with_nl: [32m1.OK [32m2.OK [0m
+[37mstdin: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [0m
+
+[37m[BUFFER_SIZE = 1]: [0m
+[37mmultiple fd: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [32m11.OK [32m12.OK [32m13.OK [32m14.OK [32m15.OK [32m16.OK [32m17.OK [32m18.OK [32m19.OK 
+[37m[BUFFER_SIZE = 42]: [0m
+[37mmultiple fd: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [32m11.OK [32m12.OK [32m13.OK [32m14.OK [32m15.OK [32m16.OK [32m17.OK [32m18.OK [32m19.OK 
+[37m[BUFFER_SIZE = 10000000]: [0m
+[37mmultiple fd: [32m1.OK [32m2.OK [32m3.OK [32m4.OK [32m5.OK [32m6.OK [32m7.OK [32m8.OK [32m9.OK [32m10.OK [32m11.OK [32m12.OK [32m13.OK [32m14.OK [32m15.OK [32m16.OK [32m17.OK [32m18.OK [32m19.OK 
+
+ℹ Running tests: fsoares (my own tests)
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[33mBONUS!
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;33m2.KO Abort
+[0m[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: l[0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;33m2.KO Abort
+[0m[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mInvalid fd          [0m: [0;32m1.OK [0m[0;33m2.KO Abort
+[0m[0;34mempty.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34m1char.txt           [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mone_line_no_nl.txt  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34monly_nl.txt         [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mmultiple_nl.txt     [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mvariable_nls.txt    [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14_LEAKS.OK [0m
+[0;34mlines_around_10.txt [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+[0;34mgiant_line.txt      [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3_LEAKS.OK [0m
+[0;34mgiant_line_nl.txt   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4_LEAKS.OK [0m
+[0;34mstdin               [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 1
+[0;34mopen, close, open   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;33m3.KO Abort
+[0m[0;34m2 file descriptors  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13_LEAKS.OK [0m
+[0;34mmultiple fds        [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14.OK [0m[0;32m15.OK [0m[0;32m16.OK [0m[0;32m17.OK [0m[0;32m18.OK [0m[0;32m19.OK [0m[0;32m20.OK [0m[0;32m21.OK [0m[0;32m22.OK [0m[0;32m23_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 10
+[0;34mopen, close, open   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;33m3.KO Abort
+[0m[0;34m2 file descriptors  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13_LEAKS.OK [0m
+[0;34mmultiple fds        [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14.OK [0m[0;32m15.OK [0m[0;32m16.OK [0m[0;32m17.OK [0m[0;32m18.OK [0m[0;32m19.OK [0m[0;32m20.OK [0m[0;32m21.OK [0m[0;32m22.OK [0m[0;32m23_LEAKS.OK [0m
+
+[1;35mBUFFER_SIZE[0m: 1000000
+[0;34mopen, close, open   [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;33m3.KO Abort
+[0m[0;34m2 file descriptors  [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13_LEAKS.OK [0m
+[0;34mmultiple fds        [0m: [0;32m1.OK [0m[0;32m2.OK [0m[0;32m3.OK [0m[0;32m4.OK [0m[0;32m5.OK [0m[0;32m6.OK [0m[0;32m7.OK [0m[0;32m8.OK [0m[0;32m9.OK [0m[0;32m10.OK [0m[0;32m11.OK [0m[0;32m12.OK [0m[0;32m13.OK [0m[0;32m14.OK [0m[0;32m15.OK [0m[0;32m16.OK [0m[0;32m17.OK [0m[0;32m18.OK [0m[0;32m19.OK [0m[0;32m20.OK [0m[0;32m21.OK [0m[0;32m22.OK [0m[0;32m23_LEAKS.OK [0m
+
+⠋ Processing output⠙ Processing output⠹ Processing output⠸ Processing output⠼ Processing output⠴ Processing output⠦ Processing output⠧ Processing output⠇ Processing output⠏ Processing output⠋ Processing output⠙ Processing output⠹ Processing output⠸ Processing output⠼ Processing output⠴ Processing output⠦ Processing output⠧ Processing output⠇ Processing outputErrors found:
+=================================================================
+==55698==ERROR: AddressSanitizer: heap-use-after-free on address 0x6060000004c0 at pc 0x00010111f12b bp 0x7ffeeeae3210 sp 0x7ffeeeae3208
+READ of size 8 at 0x6060000004c0 thread T0
+    #0 0x10111f12a in get_next_line get_next_line_bonus.c:111
+    #1 0x10111de40 in test_gnl_func file_utils.c:16
+    #2 0x101113fb4 in main tester.c:17
+    #3 0x7fff6f2c9cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x6060000004c0 is located 32 bytes inside of 56-byte region [0x6060000004a0,0x6060000004d8)
+freed by thread T0 here:
+    #0 0x103f642c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x1011187e5 in free malloc_mock.c:82
+    #2 0x10111f965 in gnl_del get_next_line_utils_bonus.c:41
+    #3 0x10111e678 in read_line get_next_line_bonus.c:63
+    #4 0x10111f0c0 in get_next_line get_next_line_bonus.c:110
+    #5 0x10111de40 in test_gnl_func file_utils.c:16
+    #6 0x101113fb4 in main tester.c:17
+    #7 0x7fff6f2c9cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+previously allocated by thread T0 here:
+    #0 0x103f6417d in wrap_malloc+0x9d (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x4917d)
+    #1 0x1011181ac in malloc malloc_mock.c:65
+    #2 0x10111e064 in new_lst get_next_line_bonus.c:19
+    #3 0x10111e2ab in find_fd_node get_next_line_bonus.c:37
+    #4 0x10111eecd in get_next_line get_next_line_bonus.c:104
+    #5 0x10111de40 in test_gnl_func file_utils.c:16
+    #6 0x101113fb4 in main tester.c:17
+    #7 0x7fff6f2c9cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+SUMMARY: AddressSanitizer: heap-use-after-free get_next_line_bonus.c:111 in get_next_line
+Error in test 2: get_next_line(100: "Invalid fd"): Memory problems!
+     in sigabort utils.c:58:1
+     in get_next_line get_next_line_bonus.c:111:12
+     in test_gnl_func file_utils.c:16:8
+     in main tester.c:17:2
+
+=================================================================
+==55735==ERROR: AddressSanitizer: heap-use-after-free on address 0x6060000004c8 at pc 0x00010546312b bp 0x7ffeea79f210 sp 0x7ffeea79f208
+READ of size 8 at 0x6060000004c8 thread T0
+    #0 0x10546312a in get_next_line get_next_line_bonus.c:111
+    #1 0x105461e40 in test_gnl_func file_utils.c:16
+    #2 0x105457fb4 in main tester.c:17
+    #3 0x7fff6f2c9cc8 in start+0x0 (libdyld.dylib:x86_64+0x1acc8)
+
+0x6060000004c8 is located 40 bytes inside of 64-byte region [0x6060000004a0,0x6060000004e0)
+freed by thread T0 here:
+    #0 0x1082a92c6 in wrap_free+0xa6 (libclang_rt.asan_osx_dynamic.dylib:x86_64h+0x492c6)
+    #1 0x10545c7e5 in free malloc_mock.c:82
+    #2 0x105463965 in gnl_del get_next_line_utils_bonus.c:41
+    #3 0x105462678 in read_line get_next_line_bonus.c:63
+...
+
+File too large. To see full report open: /Users/juykang/francinette/temp/get_next_line/fsoares/errors.log
+
+To see the tests open: /Users/juykang/francinette/tests/get_next_line/fsoares/tester.c
+and the bonus open: /Users/juykang/francinette/tests/get_next_line/fsoares/bonus.c
+
+
+Summary: 
+
+Norminette Errors: get_next_line.c, main.c
+
+Failed tests: fsoares
+
