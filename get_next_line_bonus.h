@@ -6,7 +6,7 @@
 /*   By: juykang <juykang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 17:52:34 by juykang           #+#    #+#             */
-/*   Updated: 2022/08/01 22:59:49 by juykang          ###   ########seoul.kr  */
+/*   Updated: 2022/08/06 16:49:16 by juykang          ###   ########seoul.kr  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 1000
 # endif
 
 typedef struct s_gnl
@@ -31,11 +31,10 @@ typedef struct s_gnl
 	ssize_t			res_len;
 }	t_gnl;
 
+char	*get_next_line(int fd);
 t_gnl	*new_lst(int fd);
 t_gnl	*find_fd_node(t_gnl **head, t_gnl **cur, int fd);
 ssize_t	read_line(t_gnl **head, char *res, t_gnl *cur, int fd);
-char	*get_next_line(int fd);
-char	*get_make_line(t_gnl *cur, char **res, int flag);
-char	*get_copy_line(char *res, char *cur, ssize_t len);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void	gnl_del(t_gnl **head, t_gnl *cur);
 #endif
